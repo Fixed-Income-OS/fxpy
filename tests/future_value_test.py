@@ -7,11 +7,9 @@ from classes.Future_Value import FutureValue
 
 
 def test_future_value():
-    test = FutureValue(10000000, 8.7, 5)
+    test = FutureValue(10000000, 8.7, 5, 1, False)
     assert test.calculate() == 15175664.630142067, "Should be 15175664.630142067"
 
 
 if __name__ == "__main__":
     test_future_value()
-
-
