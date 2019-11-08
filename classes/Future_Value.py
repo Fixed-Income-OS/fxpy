@@ -1,6 +1,7 @@
 from math import pow
 from decimal import Decimal
 
+
 class FutureValue:
     def __init__(self, principal, interest_rate, period, period_type, annuity):
         self.principal = principal
