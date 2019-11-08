@@ -11,7 +11,12 @@ def test_present_value():
     assert round(test.calculate()) == 5831654, "Should be $5,831,654"
 
 
+def test_present_value_fraction():
+    test = PresentValue(1000, 7, 9.25)
+    assert round(test.calculate()) == 535, "Should be $534.81"
+
+
 if __name__ == "__main__":
     test_present_value()
-
+    test_present_value_fraction()
 
