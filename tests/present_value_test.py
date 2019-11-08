@@ -7,8 +7,8 @@ from classes.Present_Value import PresentValue
 
 
 def test_present_value():
-    test = PresentValue(200, 3, 10)
-    assert test.calculate() == 148.818782979345, "Should be 148.818782979345"
+    test = PresentValue(9000000, 7.5, 6)
+    assert round(test.calculate()) == 5831654, "Should be $5,831,654"
 
 
 if __name__ == "__main__":
