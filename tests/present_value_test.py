@@ -26,8 +26,3 @@ def test_present_value_annuity_multiple():
     assert round(test.calculate()) == 424, "Should be $424"
 
 
-if __name__ == "__main__":
-    test_present_value()
-    test_present_value_fraction()
-    test_present_value_annuity()
-    test_present_value_annuity_multiple()

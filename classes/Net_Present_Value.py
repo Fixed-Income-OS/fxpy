@@ -19,7 +19,3 @@ class NetPresentValue:
             temp += 1
 
         return np.sum(to_calc)
-
-
-test = NetPresentValue([2000, 2000, 2500, 4000], 14)
-print(test.calculate())

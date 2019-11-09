@@ -31,10 +31,3 @@ def test_future_value_annuity_semi_annual():
     assert round(test_e.calculate()) == 5569558.0, "Should be $5,569,558"
 
 
-if __name__ == "__main__":
-    test_future_value_regular()
-    test_future_value_fraction()
-    test_future_value_semi_annual()
-    test_future_value_annuity()
-    test_future_value_annuity_semi_annual()
-
