@@ -11,10 +11,15 @@ class PriceBondRegular:
         self.principal = principal
 
     def calculate(self):
-        coupon_period_cal = calc_period_info(self.period, self.period_type, self.coupon / 100)
-        coupon_period = coupon_period_cal['interest_rate'] * self.principal
+        if self.coupon != 0:
+            coupon_period_cal = calc_period_info(self.period, self.period_type, self.coupon / 100)
+            coupon_period = coupon_period_cal['interest_rate'] * self.principal
 
-        coupon_pv = PresentValue(coupon_period, self.interest_rate, self.period, self.period_type, True)
-        par_pv = PresentValue(self.principal, self.interest_rate, self.period, self.period_type, False)
+            coupon_pv = PresentValue(coupon_period, self.interest_rate, self.period, self.period_type, True)
+            par_pv = PresentValue(self.principal, self.interest_rate, self.period, self.period_type, False)
 
-        return round(coupon_pv.calculate()) + round(par_pv.calculate())
+            return round(coupon_pv.calculate()) + round(par_pv.calculate())
+        else:
+            par_pv = PresentValue(self.principal, self.interest_rate, self.period, self.period_type, False)
+            return round(par_pv.calculate())
+
