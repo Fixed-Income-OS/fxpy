@@ -1,5 +1,6 @@
 from math import pow
 from decimal import Decimal
+from utils import period_util
 
 
 class FutureValue:
@@ -11,18 +12,10 @@ class FutureValue:
         self.annuity = annuity
 
     def calculate(self):
-        if self.period_type == 1:
-            self.period = 1 * self.period
-            self.interest_rate = 1 * self.interest_rate
-        elif self.period_type == 6:
-            self.interest_rate = self.interest_rate / 2
-            self.period = 2 * self.period
-        elif self.period_type == 3:
-            self.interest_rate = self.interest_rate / 4
-            self.period = 4 * self.period
-        elif self.period_type == 12:
-            self.interest_rate = self.interest_rate / 12
-            self.period = 12 * self.period
+        period_cal = period_util.calc_period_info(self.period, self.period_type, self.interest_rate)
+
+        self.period = period_cal['period']
+        self.interest_rate = period_cal['interest_rate']
 
         if self.annuity is False:
             return pow(1 + (self.interest_rate / 100), self.period) * self.principal
