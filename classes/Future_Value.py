@@ -22,13 +22,3 @@ class FutureValue:
         else:
             upper_value = pow(1 + self.interest_rate / 100, self.period) - 1
             return Decimal(self.principal) * (Decimal(upper_value) / Decimal(self.interest_rate / 100))
-
-    def __str__(self):
-        formated = '''
-            Principal: ${:,.2f} \n
-            Interest rate: {}% per period \n
-            Number of payments: {} \n
-            Future Value: ${:,.2f}
-        '''.format(self.principal, self.interest_rate, self.period, self.calculate())
-
-        return formated
