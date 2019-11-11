@@ -1,5 +1,7 @@
 # fxpy
 
+[![Build Status](https://travis-ci.org/Fixed-Income-OS/fx-py.svg?branch=master)](https://travis-ci.org/Fixed-Income-OS/fx-py)
+
 A python library for analyzing and modeling fixed income securities. It includes modules for
 modeling cash flows, pricing, risk calculation and more.
 
