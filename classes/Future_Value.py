@@ -22,3 +22,4 @@ class FutureValue:
         else:
             upper_value = pow(1 + self.interest_rate / 100, self.period) - 1
             return Decimal(self.principal) * (Decimal(upper_value) / Decimal(self.interest_rate / 100))
+
