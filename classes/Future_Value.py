@@ -4,8 +4,8 @@ from utils import period_util
 
 
 class FutureValue:
-    def __init__(self, principal, interest_rate, period, period_type, annuity):
-        self.principal = principal
+    def __init__(self, par_value, interest_rate, period, period_type, annuity):
+        self.par_value = par_value
         self.interest_rate = Decimal(interest_rate)
         self.period = period
         self.period_type = period_type
@@ -18,8 +18,8 @@ class FutureValue:
         self.interest_rate = period_cal['interest_rate']
 
         if self.annuity is False:
-            return pow(1 + (self.interest_rate / 100), self.period) * self.principal
+            return pow(1 + (self.interest_rate / 100), self.period) * self.par_value
         else:
             upper_value = pow(1 + self.interest_rate / 100, self.period) - 1
-            return Decimal(self.principal) * (Decimal(upper_value) / Decimal(self.interest_rate / 100))
+            return Decimal(self.par_value) * (Decimal(upper_value) / Decimal(self.interest_rate / 100))
 

@@ -4,8 +4,8 @@ from utils import period_util
 
 
 class PresentValue:
-    def __init__(self, future_value, interest_rate, period, period_type, annuity):
-        self.future_value = Decimal(future_value)
+    def __init__(self, par_value, interest_rate, period, period_type, annuity):
+        self.par_value = Decimal(par_value)
         self.interest_rate = Decimal(interest_rate)
         self.period = Decimal(period)
         self.period_type = Decimal(period_type)
@@ -21,6 +21,6 @@ class PresentValue:
         self.interest_rate = period_cal['interest_rate']
 
         if self.annuity is False:
-            return self.future_value * self.discount_rate()
+            return self.par_value * self.discount_rate()
         else:
-            return self.future_value * Decimal((1 - self.discount_rate()) / (self.interest_rate / 100))
+            return self.par_value * Decimal((1 - self.discount_rate()) / (self.interest_rate / 100))
