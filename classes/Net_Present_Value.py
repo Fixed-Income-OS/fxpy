@@ -18,4 +18,5 @@ class NetPresentValue:
             to_calc.append(cash / denom)
             temp += 1
 
-        return np.sum(to_calc)
+        self.npv = np.sum(to_calc)
+        return self.npv
