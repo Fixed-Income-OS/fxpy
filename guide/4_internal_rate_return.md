@@ -3,7 +3,7 @@
 THe internal rate of return (IRR) is used to estimate the return on potential investments.
 IRR is the rate at which the present value of all cash flows from the investment becomes zero.
 
-![equation] (https://latex.codecogs.com/gif.download?%5Cdpi%7B120%7D%20%5Clarge%200%20%3D%20NPV%20%3D%20%5Csum%20_%7Bt%3D1%7D%5ET%20%5Cfrac%20%7BC%5Et%7D%7B%281%20+%20IRR%29%5Et%7D%20-%20C_%7B0%7D)
+![equation](https://latex.codecogs.com/gif.download?%5Cdpi%7B120%7D%20%5Clarge%200%20%3D%20NPV%20%3D%20%5Csum%20_%7Bt%3D1%7D%5ET%20%5Cfrac%20%7BC%5Et%7D%7B%281%20+%20IRR%29%5Et%7D%20-%20C_%7B0%7D)
 
 where:
 
