@@ -23,10 +23,15 @@ class PriceBondRegular:
             par_pv = PresentValue(self.par_value, self.interest_rate, self.period, self.period_type, False)
             return round(par_pv.calculate())
 
-    def price_bond(self, ytm):
+    def price_bond(self):
+        ytm = self.interest_rate
         coupon_period_cal = calc_period_info(self.period, self.period_type, self.coupon / 100)
         periods = coupon_period_cal['period']
+        interest_rate = coupon_period_cal['interest_rate'] * 100
+
         dt = [(i + 1)/self.period_type for i in range(int(periods))]
-        price = sum([self.coupon / (1 + ytm/self.period_type)** periods for t in dt]) + self.par_value/(1 + ytm/self.period_type) ** periods
+        if self.period_type == 6:
+            freq = 2
+        price = sum([interest_rate / (1 + ytm/freq)** periods for t in dt]) + self.par_value/(1 + ytm/freq) ** periods
 
         return price
