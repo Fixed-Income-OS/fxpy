@@ -18,3 +18,5 @@ sample = Yield(coupon_rate, price, period, period_type, par_value)
 sample.calculate() # Should be 8.5%
 ```
 
+Yield to maturity is computed using the Newton-Raphson method which produces successively better approximations
+to the roots of a real-valued function.
