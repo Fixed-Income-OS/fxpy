@@ -32,6 +32,8 @@ class PriceBondRegular:
         dt = [(i + 1)/self.period_type for i in range(int(periods))]
         if self.period_type == 6:
             freq = 2
+        elif self.period_type == 12:
+            freq = 1
         price = sum([interest_rate / (1 + ytm/freq)** periods for t in dt]) + self.par_value/(1 + ytm/freq) ** periods
 
         return price
