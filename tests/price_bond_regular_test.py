@@ -14,3 +14,8 @@ def test_px_bond_reg_one():
 def test_px_bond_price():
     sample = PriceBondRegular(5.75, 1.5, 6, 0.093691, 100)
     assert round(sample.price_bond()) == 95, "Should be $95"
+
+
+def test_px_bond_price():
+    sample = PriceBondRegular(5.75, 1.5, 12, 0.093691, 100)
+    assert round(sample.price_bond()) == 22, "Should be 22"
