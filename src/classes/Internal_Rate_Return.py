@@ -1,4 +1,4 @@
-import numpy as np
+import numpy_financial as npf
 
 
 class InternalRateReturn:
@@ -8,4 +8,4 @@ class InternalRateReturn:
 
     def calculate(self):
         self.cash_flow.insert(0, self.price)
-        return round(np.irr(self.cash_flow) * 100)
+        return round(npf.irr(self.cash_flow) * 100)
